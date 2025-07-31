@@ -4,9 +4,9 @@ from .models import Project, Task
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model= Project
-        fields= '_all_'
+        fields = '__all__'
 
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model= Task
-        fields= '_all_'
+        fields = '__all__'

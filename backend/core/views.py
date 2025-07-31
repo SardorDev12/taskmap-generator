@@ -4,3 +4,8 @@ from .serializers import ProjectSerializer, TaskSerializer
 
 class ProjectModelViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
+    
+class TaskModelViewSet(viewsets.ModelViewSet):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
