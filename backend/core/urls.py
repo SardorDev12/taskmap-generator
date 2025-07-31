@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ProjectModelViewSet, TaskModelViewSet
+from .views import ProjectModelViewSet, TaskModelViewSet, import_tasks
 
 urlpatterns = [
     # Projects
@@ -27,4 +27,9 @@ urlpatterns = [
         'patch': 'partial_update',
         'delete': 'destroy'
     }), name='task-detail'),
+    path("projects/<int:pk>/tasks/", ProjectModelViewSet.as_view({
+        'get': 'tasks'
+    }), name='project-tasks'),
+
+    path('tasks/import/', import_tasks, name='import-tasks'),
 ]
